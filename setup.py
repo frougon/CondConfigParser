@@ -30,6 +30,7 @@
 # policies, either expressed or implied, of the CondConfigParser Project.
 
 from setuptools import setup, find_packages
+import sys
 import os
 import subprocess
 import traceback
