@@ -1,3 +1,11 @@
+Home page
+---------
+
+CondConfigParser's home page is located at:
+
+  http://people.via.ecp.fr/~flo/projects/CondConfigParser/
+
+
 Requirements
 ------------
 
@@ -96,7 +104,7 @@ documentation build process.
 For those who have installed `Sphinx`_ but not `Make`_, it is still
 possible to build the documentation with a command such as::
 
-  sphinx-build -b html . _build/html
+  sphinx-build -b html -d _build/doctrees . _build/html
 
 run from the ``doc`` directory. Please refer to `sphinx-build`_ for more
 details.

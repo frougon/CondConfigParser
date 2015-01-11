@@ -16,15 +16,15 @@ setup (see below), you just have to run one of the following commands:
 
 or
 
-  pip install /path/to/CondConfigParser-X.Y.Z.tar.gz
+  pip install /path/to/CondConfigParser-X.Y.Z.tar.bz2
 
 or
 
-  pip install https://url/to/CondConfigParser-X.Y.Z.tar.gz
+  pip install https://url/to/CondConfigParser-X.Y.Z.tar.bz2
 
 or
 
-  pip install http://url/to/CondConfigParser-X.Y.Z.tar.gz
+  pip install http://url/to/CondConfigParser-X.Y.Z.tar.bz2
 
 Notes:
   - old versions of pip don't support https;
@@ -36,12 +36,13 @@ Uninstallation should be as easy as:
 
   pip uninstall CondConfigParser
 
-For more information about pip, venv.py/pyvenv and virtualenv, you can
-visit the following pages:
+For more information about installation of Python packages, pip,
+venv.py/pyvenv and virtualenv, you can visit the following pages:
 
-  <https://pip.pypa.io/>
-  <https://docs.python.org/3/library/venv.html>
-  <https://virtualenv.pypa.io/>
+  Python official doc   <https://docs.python.org/3/installing/index.html>
+  pip                   <https://pip.pypa.io/>
+  The venv module       <https://docs.python.org/3/library/venv.html>
+  virtualenv            <https://virtualenv.pypa.io/>
 
 
 So, what is a "working pip setup"?

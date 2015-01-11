@@ -42,8 +42,9 @@ Regarding the second point in particular, CondConfigParser never uses
 safe to work with any configuration file, including files prepared by
 malicious users.
 
-
-Contents:
+***********
+Main Matter
+***********
 
 .. toctree::
    :maxdepth: 2
