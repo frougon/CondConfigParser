@@ -114,8 +114,8 @@ Documentation
 
 The CondConfigParser Manual is written in `reStructuredText`_ format for
 the `Sphinx`_ documentation generator. The HTML documentation for the
-latest version of CondConfigParser as rendered by Sphinx should be
-available at:
+latest version of CondConfigParser as rendered by Sphinx is available
+at:
 
   http://people.via.ecp.fr/~flo/projects/CondConfigParser/doc/
 

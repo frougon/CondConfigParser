@@ -46,8 +46,14 @@ def main():
     mo = re.search(r"\n\n\.\. _end-of-intro:\n\n(.*)", contents, re.DOTALL)
     assert mo, mo
 
+    # Improve the markup using Sphinx's 'note' directive. We include enough
+    # context to be reasonably sure we don't replace something else than the
+    # expected text.
+    rest = re.sub(r"^Note:\n\n( +The ``Makefile`` uses a Python script)",
+                  r".. note::\n\n\1", mo.group(1), 1, re.MULTILINE)
+
     with open(sys.argv[2], "w", encoding="utf-8") as ofile:
-        ofile.write(mo.group(1))
+        ofile.write(rest)
 
     sys.exit(0)
 
