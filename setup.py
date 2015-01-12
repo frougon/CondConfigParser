@@ -46,29 +46,6 @@ with open(version_file, "r", encoding="utf-8") as f:
 version = namespace["__version__"]
 
 
-def assemble_long_desc():
-    """Assemble the long description from its two parts.
-
-    Write this long description to README.rst and return it.
-
-    """
-    with open(os.path.join(here, 'doc', 'basic-pkg-info_start.rst'),
-              encoding='utf-8') as f:
-        long_description_parts = [f.read()]
-
-    # This is the part that is included in the Manual as well as in README.rst.
-    with open(os.path.join(here, 'doc', 'basic-pkg-info.rst'),
-              encoding='utf-8') as f:
-        long_description_parts.append(f.read())
-
-    long_description = '\n\n'.join(long_description_parts)
-    with open(os.path.join(here, 'README.rst'),
-              "w", encoding='utf-8', newline="\r\n") as f:
-        f.write(long_description)
-
-    return long_description
-
-
 # This function must be run from the root directory of the Git repository.
 def run_gitlog_to_changelog(output=None):
     args = [ "gitlog-to-changelog", "--format=%s%n%n%b%n" ]
@@ -116,7 +93,10 @@ def generate_changelog(ch_name, write_to_stdout=False):
     print("done.", file=sys.stderr)
 
 
-def do_setup(long_description):
+def do_setup():
+    with open("README.rst", "r", encoding="utf-8") as f:
+        long_description = f.read()
+
     setup(
         name=setuptools_pkg,
         version=version,
@@ -166,8 +146,7 @@ clone of the Git repository (no .git directory); therefore, it is impossible to
 generate the {cl!r} file from the Git log. Aborting.""".format(cl=ch_name)
         sys.exit(msg)
 
-    long_description = assemble_long_desc()
-    do_setup(long_description)
+    do_setup()
 
 
 if __name__ == "__main__": main()

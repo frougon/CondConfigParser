@@ -1,8 +1,15 @@
-basic-pkg-info_start.rst and basic-pkg-info.rst are used to build the
-top-level README.rst file for inclusion in source and binary
-distributions. As such, it must be independent of other .rst files from
-the CondConfigParser Manual and must contain only standard
-reStructuredText markup (not Sphinx!).
+basic-pkg-info.rst is automatically generated from the top-level
+README.rst file by the prepare-basic-pkg-info.py script. This script is
+in turn automatically called whenever needed by the Makefile rules that
+build the documentation.
+
+You may use the PYTHON Makefile variable to choose the Python
+interpreter used to run prepare-basic-pkg-info.py. The default value of
+this variable is 'python3'; if you want to use a different interpreter,
+you can run for instance:
+
+  make PYTHON=python3.4 html
+
 
 # Local Variables:
 # coding: utf-8

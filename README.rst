@@ -42,6 +42,7 @@ Regarding the second point in particular, CondConfigParser never uses
 safe to work with any configuration file, including files prepared by
 malicious users.
 
+.. _end-of-intro:
 
 Home page
 ---------
@@ -119,6 +120,7 @@ available at:
   http://people.via.ecp.fr/~flo/projects/CondConfigParser/doc/
 
 .. _reStructuredText: http://docutils.sourceforge.net/rst.html
+.. _Python: https://www.python.org/
 .. _Sphinx: http://sphinx-doc.org/
 .. _LaTeX: http://latex-project.org/
 .. _Make: http://www.gnu.org/software/make/
@@ -130,14 +132,14 @@ mainly docstrings.
 
 To generate the documentation yourself from CondConfigParser's code and
 the `reStructuredText`_ sources in the ``doc`` directory, first make
-sure you have `Sphinx`_ and `Make`_ installed. Then, you can go to the
-``doc`` directory and type, for instance::
+sure you have `Python`_ 3.x, `Sphinx`_ and `Make`_ installed. Then, go
+to the ``doc`` directory and type, for instance::
 
   make html
 
-You will then find the output in the ``_build/html`` subdirectory of
-``doc``. `Sphinx`_ can build the documentation in many other formats.
-For instance, if you have `LaTeX`_ installed, you can generate the
+You will find the output in the ``_build/html`` subdirectory of ``doc``.
+`Sphinx`_ can build the documentation in many other formats. For
+instance, if you have `LaTeX`_ installed, you can generate the
 CondConfigParser Manual in PDF format with::
 
   make latexpdf
@@ -146,13 +148,29 @@ You can run ``make`` from the ``doc`` directory to see a list of the
 available formats. Run ``make clean`` to clean up after the
 documentation build process.
 
-For those who have installed `Sphinx`_ but not `Make`_, it is still
-possible to build the documentation with a command such as::
+Note:
 
+  The ``Makefile`` uses a Python script (``prepare-basic-pkg-info.py``)
+  to generate ``basic-pkg-info.rst`` from the top-level ``README.rst``
+  file. By default, this script is interpreted by the ``python3``
+  executable. If you want to explicitely choose the interpreter to use,
+  you can set the ``PYTHON`` Makefile variable like this::
+
+    make PYTHON=python3.4 html
+
+  Note that this only affects running of ``prepare-basic-pkg-info.py``;
+  the Python interpreter used by Sphinx in other places of the
+  ``Makefile`` is determined by the `sphinx-build`_ executable that
+  should be part of your Sphinx installation.
+
+For those who have installed `Sphinx`_ but not `Make`_, it is still
+possible to build the documentation with two commands such as::
+
+  python3 prepare-basic-pkg-info.py ../README.rst basic-pkg-info.rst
   sphinx-build -b html -d _build/doctrees . _build/html
 
-run from the ``doc`` directory. Please refer to `sphinx-build`_ for more
-details.
+These commands must be run from the ``doc`` directory. Please refer to
+`sphinx-build`_ for more details.
 
 .. _sphinx-build: http://sphinx-doc.org/invocation.html
 

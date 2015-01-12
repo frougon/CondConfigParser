@@ -7,6 +7,5 @@ graft examples
 
 graft doc
 prune doc/_build
-exclude doc/README.txt
 
-global-exclude *.pyc __pycache__
+global-exclude *.pyc __pycache__ .gitignore
