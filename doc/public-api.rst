@@ -1,4 +1,6 @@
 .. module:: condconfigparser
+   :synopsis: Parse configuration files with conditionals
+
 
 Public API
 ==========
@@ -8,6 +10,10 @@ The :class:`~condconfigparser.RawConditionalConfig` class
 
 The main component of CondConfigParser's API is the
 :class:`~!condconfigparser.RawConditionalConfig` class:
+
+.. The reason 'extvars' is excluded from the autoclass directive below is
+   because the documentation produced for this attribute is misleading,
+   pretending it is set to None (Sphinx/autodoc 1.2.3).
 
 .. autoclass:: condconfigparser.RawConditionalConfig
    :members:
