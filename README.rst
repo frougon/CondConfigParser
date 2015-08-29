@@ -57,17 +57,37 @@ Requirements
 
 This version of CondConfigParser requires `Python`_ 3.4 or later.
 
-Installation also needs `setuptools`_, but this should only be a concern
-if you want to install without `pip`_ (if you have ``pip``, you should
-already have ``setuptools``; and if not, installing ``pip`` is likely to
-cause ``setuptools`` to be installed at the same time).
+Installation from source also requires `setuptools`_, but this should only
+be a concern if you want to install without `pip`_ (if you have ``pip``,
+you should already have ``setuptools``; and if not, installing ``pip``
+is likely to cause ``setuptools`` to be installed at the same time).
 
 .. _Python: https://www.python.org/
 .. _pip: https://pypi.python.org/pypi/pip
 
 
+Debian packages
+---------------
+
+If you are a Debian_ user, you can install CondConfigParser using the
+following lines in your ``/etc/apt/sources.list``::
+
+  deb http://people.via.ecp.fr/~flo/debian-ffgo unstable main
+  deb-src http://people.via.ecp.fr/~flo/debian-ffgo unstable main
+
+The package is named ``python3-condconfigparser``. A package for Debian
+*stable* is also available. If this is what you want, just replace
+*unstable* with *jessie*, or whatever is the codename of the current
+Debian *stable* release, in the ``sources.list`` lines given above.
+
+.. _Debian: https://www.debian.org/
+
+
 Quick installation instructions
 -------------------------------
+
+This section describes installation from source. If you want to install
+from a Debian_ package instead, see above.
 
 If you have a working `pip`_ setup, you should be able to install
 CondConfigParser with::
