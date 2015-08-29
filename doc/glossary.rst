@@ -53,14 +53,15 @@ Glossary
       false.
 
       Raw configuration lines are sometimes called :dfn:`options` because in
-      the application for which CondConfigParser was written (`FGo!`_), each
-      such line corresponds to an option for the :program:`fgfs` executable
-      (which belongs to FlightGear_). It is also more convenient to talk about
-      "default, unconditional options" and "conditional options" than it is
-      using the equivalent expressions based on the longer phrase "raw
-      configuration lines".
+      the application for which CondConfigParser was written (initially
+      `FGo!`_, now `FFGo`_), each such line corresponds to an option for the
+      :program:`fgfs` executable (which belongs to FlightGear_). It is also
+      more convenient to talk about "default, unconditional options" and
+      "conditional options" than it is using the equivalent expressions based
+      on the longer phrase "raw configuration lines".
 
       .. _FGo!: https://sites.google.com/site/erobosprojects/flightgear/add-ons/fgo
+      .. _FFGo: http://people.via.ecp.fr/~flo/projects/FFGo/
       .. _FlightGear: http://www.flightgear.org/
 
       See :ref:`raw-configuration-line` for a description of how raw
