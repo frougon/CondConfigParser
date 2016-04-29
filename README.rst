@@ -49,7 +49,9 @@ Home page
 
 CondConfigParser's home page is located at:
 
-  http://people.via.ecp.fr/~flo/projects/CondConfigParser/
+  http://frougon.net/projects/CondConfigParser/
+
+(it was on people.via.ecp.fr before April 30, 2016)
 
 
 Requirements
@@ -72,8 +74,8 @@ Debian package
 If you are a Debian_ user, you can install CondConfigParser using the
 following lines in your ``/etc/apt/sources.list``::
 
-  deb http://people.via.ecp.fr/~flo/debian-ffgo unstable main
-  deb-src http://people.via.ecp.fr/~flo/debian-ffgo unstable main
+  deb http://frougon.net/debian-ffgo unstable main
+  deb-src http://frougon.net/debian-ffgo unstable main
 
 The package is named ``python3-condconfigparser``. A package for Debian
 *stable* is also available. If this is what you want, just replace
@@ -115,7 +117,7 @@ the tarball or zip file yourself in order to install it later, possibly
 on a different machine. In such a case, you may get it `from PyPI
 <https://pypi.python.org/pypi/CondConfigParser>`_ or `from Florent
 Rougon's home page
-<http://people.via.ecp.fr/~flo/projects/CondConfigParser/dist/>`_.
+<http://frougon.net/projects/CondConfigParser/dist/>`_.
 
 .. _PyPI: https://pypi.python.org/pypi
 
@@ -137,7 +139,7 @@ the `Sphinx`_ documentation generator. The HTML documentation for the
 latest version of CondConfigParser as rendered by Sphinx is available
 at:
 
-  http://people.via.ecp.fr/~flo/projects/CondConfigParser/doc/
+  http://frougon.net/projects/CondConfigParser/doc/
 
 .. _reStructuredText: http://docutils.sourceforge.net/rst.html
 .. _Python: https://www.python.org/

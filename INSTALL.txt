@@ -3,7 +3,7 @@ INSTALLATION
 
 This file explains installation of CondConfigParser from source. For
 ready-to-use packages (Debian, etc.), see
-<http://people.via.ecp.fr/~flo/projects/FFGo/> or README.rst.
+<http://frougon.net/projects/FFGo/> or README.rst.
 
 CondConfigParser is packaged with setuptools, which is the currently
 recommended packaging tool according to

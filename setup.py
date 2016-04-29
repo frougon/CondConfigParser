@@ -1,7 +1,7 @@
 #! /usr/bin/env python3
 # -*- coding: utf-8 -*-
 
-# Copyright (c) 2014, 2015, Florent Rougon
+# Copyright (c) 2014, 2015, 2016, Florent Rougon
 # All rights reserved.
 #
 # Redistribution and use in source and binary forms, with or without
@@ -106,7 +106,7 @@ def do_setup():
         long_description=long_description,
 
         # The project's main homepage
-        url="http://people.via.ecp.fr/~flo/projects/{}/".format(setuptools_pkg),
+        url="http://frougon.net/projects/{}/".format(setuptools_pkg),
 
         # Author details
         author="Florent Rougon",
