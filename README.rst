@@ -66,8 +66,8 @@ is likely to cause ``setuptools`` to be installed at the same time).
 .. _pip: https://pypi.python.org/pypi/pip
 
 
-Debian packages
----------------
+Debian package
+--------------
 
 If you are a Debian_ user, you can install CondConfigParser using the
 following lines in your ``/etc/apt/sources.list``::
