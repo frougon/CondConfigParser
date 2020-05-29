@@ -2,7 +2,7 @@
 
 # version.py --- Version information for CondConfigParser
 #
-# Copyright (c) 2014-2016, Florent Rougon
+# Copyright (c) 2014-2020, Florent Rougon
 # All rights reserved.
 #
 # Redistribution and use in source and binary forms, with or without
@@ -46,7 +46,7 @@ class VersionInfo(_VersionInfo):
     def __repr__(self):
         return "{0}.{1}".format(__name__, _VersionInfo.__repr__(self))
 
-version_info = VersionInfo(1, 0, 3, "")
+version_info = VersionInfo(1, 0, 4, "")
 __version__ = str(version_info)
 
 del collections
