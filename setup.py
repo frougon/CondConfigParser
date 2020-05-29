@@ -1,7 +1,7 @@
 #! /usr/bin/env python3
 # -*- coding: utf-8 -*-
 
-# Copyright (c) 2014, 2015, 2016, Florent Rougon
+# Copyright (c) 2014-2020, Florent Rougon
 # All rights reserved.
 #
 # Redistribution and use in source and binary forms, with or without
@@ -115,7 +115,7 @@ def do_setup():
         # Choose your license
         license='2-clause BSD',
 
-        # See https://pypi.python.org/pypi?%3Aaction=list_classifiers
+        # See <https://pypi.org/pypi?%3Aaction=list_classifiers>
         classifiers=[
             'Development Status :: 5 - Production/Stable',
             'Intended Audience :: Developers',

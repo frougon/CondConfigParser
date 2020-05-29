@@ -65,7 +65,7 @@ you should already have ``setuptools``; and if not, installing ``pip``
 is likely to cause ``setuptools`` to be installed at the same time).
 
 .. _Python: https://www.python.org/
-.. _pip: https://pypi.python.org/pypi/pip
+.. _pip: https://pypi.org/project/pip/
 
 
 Debian package
@@ -115,11 +115,11 @@ Typical installations with `pip`_ automatically download the latest
 release from `PyPI`_. However, in some cases, you may want to download
 the tarball or zip file yourself in order to install it later, possibly
 on a different machine. In such a case, you may get it `from PyPI
-<https://pypi.python.org/pypi/CondConfigParser>`_ or `from Florent
+<https://pypi.org/project/CondConfigParser/>`_ or `from Florent
 Rougon's home page
 <http://frougon.net/projects/CondConfigParser/dist/>`_.
 
-.. _PyPI: https://pypi.python.org/pypi
+.. _PyPI: https://pypi.org/
 
 
 Git repository
