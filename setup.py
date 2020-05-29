@@ -66,7 +66,7 @@ of that file, you can replace it with a simple shebang line such as
 "#! /usr/bin/perl".""".format(
    prg=args[0],
    underlining="=" * len(args[0]),
-   url="http://git.savannah.gnu.org/gitweb/?p=gnulib.git;a=blob_plain;"
+   url="https://git.savannah.gnu.org/gitweb/?p=gnulib.git;a=blob_plain;"
        "f=build-aux/gitlog-to-changelog"), file=sys.stderr)
         sys.exit(1)
 
@@ -104,9 +104,16 @@ def do_setup():
         description="Python library for parsing configuration files with "
                     "conditionals",
         long_description=long_description,
+        long_description_content_type="text/x-rst",
 
         # The project's main homepage
         url="http://frougon.net/projects/{}/".format(setuptools_pkg),
+        project_urls={
+          "Documentation": "http://frougon.net/projects/CondConfigParser/doc/",
+          "Git repository": "https://github.com/frougon/CondConfigParser",
+          "Issue tracker":
+            "https://github.com/frougon/CondConfigParser/issues",
+        },
 
         # Author details
         author="Florent Rougon",
@@ -122,16 +129,15 @@ def do_setup():
             'License :: OSI Approved :: BSD License',
             'Operating System :: OS Independent',
             'Programming Language :: Python :: 3',
-            'Programming Language :: Python :: 3.4',
-            'Programming Language :: Python :: 3.5',
             'Topic :: Software Development :: Libraries :: Python Modules',
         ],
         keywords=\
-            'configuration file parsing parser conditionals variables lists',
+            'configuration,file,parsing,parser,conditionals,variables,lists',
 
         packages=find_packages(exclude=['docs', 'example', 'dev-tools']),
         include_package_data=True,
 
+        python_requires=">=3",
         install_requires=[],
         test_suite="condconfigparser.tests")
 

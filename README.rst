@@ -79,7 +79,7 @@ following lines in your ``/etc/apt/sources.list``::
 
 The package is named ``python3-condconfigparser``. A package for Debian
 *stable* is also available. If this is what you want, just replace
-*unstable* with *jessie*, or whatever is the codename of the current
+*unstable* with *buster*, or whatever is the codename of the current
 Debian *stable* release, in the ``sources.list`` lines given above.
 
 .. _Debian: https://www.debian.org/
