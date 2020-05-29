@@ -36,7 +36,7 @@ extensions = [
 ]
 
 autodoc_member_order = "bysource"
-intersphinx_mapping = {'python': ('http://docs.python.org/3', None)}
+intersphinx_mapping = {'python': ('https://docs.python.org/3', None)}
 
 # Add any paths that contain templates here, relative to this directory.
 templates_path = ['_templates']
@@ -52,7 +52,7 @@ master_doc = 'index'
 
 # General information about the project.
 project = 'CondConfigParser'
-copyright = '2014-2015, Florent Rougon'
+copyright = '2014-2020, Florent Rougon'
 
 # The version info for the project you're documenting, acts as replacement for
 # |version| and |release|, also used in various other places throughout the
