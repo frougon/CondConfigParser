@@ -137,7 +137,7 @@ def do_setup():
         packages=find_packages(exclude=['docs', 'example', 'dev-tools']),
         include_package_data=True,
 
-        python_requires=">=3",
+        python_requires="~=3.4",
         install_requires=[],
         test_suite="condconfigparser.tests")
 
