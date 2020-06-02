@@ -82,7 +82,19 @@ The package is named ``python3-condconfigparser``. A package for Debian
 *unstable* with *buster*, or whatever is the codename of the current
 Debian *stable* release, in the ``sources.list`` lines given above.
 
+The ``Release`` files in this repository are signed with `Florent
+Rougon's OpenPGP key`_ . After downloading this key, be sure to verify
+that this is the same key as served `by Github
+<https://github.com/frougon.gpg>`_ over https (you'll need to add a
+trailing newline to the latter to ensure byte-for-byte equality). Once
+you've verified that this is the right key, you can add it to your
+``apt`` keyring using ``apt-key add /path/to/file``, as root. This
+allows ``apt`` to authenticate the packages. If you don't do this, the
+installation should still be possible but with warnings and, of course,
+reduced security.
+
 .. _Debian: https://www.debian.org/
+.. _Florent Rougon's OpenPGP key: http://frougon.net/keys.html
 
 
 Quick installation instructions
@@ -112,12 +124,13 @@ Download
 --------
 
 Typical installations with `pip`_ automatically download the latest
-release from `PyPI`_. However, in some cases, you may want to download
-the tarball or zip file yourself in order to install it later, possibly
-on a different machine. In such a case, you may get it `from PyPI
-<https://pypi.org/project/CondConfigParser/>`_ or `from Florent
+release from `PyPI`_. However, in some cases, you may want to download a
+wheel package, tarball or zip file yourself in order to install it
+later, possibly on a different machine. You may get such files `from
+PyPI <https://pypi.org/project/CondConfigParser/>`_ or `from Florent
 Rougon's home page
-<http://frougon.net/projects/CondConfigParser/dist/>`_.
+<http://frougon.net/projects/CondConfigParser/dist/>`_ (the former
+should normally be favored over the latter, as it is served over https).
 
 .. _PyPI: https://pypi.org/
 
