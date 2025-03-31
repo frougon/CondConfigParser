@@ -34,18 +34,9 @@
 import os
 import unittest
 
-# With absolute imports (e.g., 'from condconfigparser.lexer import Lexer'),
-# one can run the test suite for an installed package like this:
-#
-#   ( cd base_dir/lib/python3.4/site-packages/condconfigparser && \
-#     python3 -m unittest )
-#
-# instead of:
-#
-#   ( cd base_dir/lib/python3.4/site-packages/condconfigparser && \
-#     python3 -m unittest discover -v -t .. )
-from ..lexer import Lexer
-from ..parser import Parser
+
+from condconfigparser.lexer import Lexer
+from condconfigparser.parser import Parser
 
 
 def loadTreeFromCfgFile(cfgFile):
@@ -62,7 +53,7 @@ class TestLexerPlusParser(unittest.TestCase):
     def testComplexExprAroundBinOp(self):
         """Parse expressions of the form ( orTest ) == ( orTest ) and \
 analogue with !="""
-        from .data.config2 import refTree
+        from data.config2 import refTree
         tree = loadTreeFromCfgFile("config2")
         self.assertEqual(tree, refTree)
 
@@ -70,13 +61,13 @@ analogue with !="""
         """Parse constructs with continuation lines
 
         (right, continuation lines are handled at lexer level)"""
-        from .data.config3 import refTree
+        from data.config3 import refTree
         tree = loadTreeFromCfgFile("config3")
         self.assertEqual(tree, refTree)
 
     def testLexerPlusParser(self):
         """Parse a complex configuration file"""
-        from .data.config1 import refTree
+        from data.config1 import refTree
         tree = loadTreeFromCfgFile("config1")
         self.assertEqual(tree, refTree)
 

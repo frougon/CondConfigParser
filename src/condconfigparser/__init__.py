@@ -35,7 +35,8 @@ expressions to define conditional sections.
 
 """
 
-from .version import __version__, version_info
+__version__ = "1.0.5"
+
 from .exceptions import error, \
                         ParseError, \
                         InvalidUsage, \

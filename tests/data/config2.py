@@ -32,7 +32,7 @@
 # those of the authors and should not be interpreted as representing official
 # policies, either expressed or implied, of the CondConfigParser Project.
 
-from ... import lexer as l, parser as p
+from condconfigparser import lexer as l, parser as p
 
 refTree = \
     p.RootNode(

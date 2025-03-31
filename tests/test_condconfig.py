@@ -34,21 +34,11 @@
 import os
 import unittest
 
-# With absolute imports (e.g., 'from condconfigparser import InTestTypeError'),
-# one can run the test suite for an installed package like this:
-#
-#   ( cd base_dir/lib/python3.4/site-packages/condconfigparser && \
-#     python3 -m unittest )
-#
-# instead of:
-#
-#   ( cd base_dir/lib/python3.4/site-packages/condconfigparser && \
-#     python3 -m unittest discover -v -t .. )
-from .. import InTestTypeError, RawConditionalConfig
+from condconfigparser import InTestTypeError, RawConditionalConfig
 
 # Hook doctest-based tests into the test discovery mechanism
 import doctest
-from .. import condconfig
+from condconfigparser import condconfig
 
 def load_tests(loader, tests, ignore):
     tests.addTests(doctest.DocTestSuite(condconfig))
@@ -72,7 +62,7 @@ class TestRawConditionalConfigEval(unittest.TestCase):
 
     def testEvalOnComplexCfgFile(self):
         """Process a complex configuration file with RawConditionalConfig.eval()"""
-        from .data.config1 import variables, rawConfigLines
+        from data.config1 import variables, rawConfigLines
         config = loadCfgFile("config1", self.sampleContext)
 
         self.assertEqual(config.eval(self.sampleContext),
@@ -86,7 +76,7 @@ RawConditionalConfig.eval()
         and analogue with !=.
 
         """
-        from .data.config1 import variables, rawConfigLines
+        from data.config1 import variables, rawConfigLines
         config = loadCfgFile("config1", self.sampleContext)
 
         self.assertEqual(config.eval(self.sampleContext),

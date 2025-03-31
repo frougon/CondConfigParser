@@ -8,10 +8,7 @@ __pycache__/
 
 # Automatically populated by Setuptools
 /build/
-/CondConfigParser.egg-info/
+/src/CondConfigParser.egg-info/
 
 # Distribution tarballs
 /dist/
-
-# Nothing useful to the whole world in this file so far...
-/setup.cfg
