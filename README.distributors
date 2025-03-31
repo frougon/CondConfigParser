@@ -16,18 +16,14 @@ The ChangeLog file is not part of the Git repository, it is automatically
 generated from the Git log with the gitlog-to-changelog[1] program. But it
 must be present in every released tarball or package!
 
-  [1] http://git.savannah.gnu.org/gitweb/?p=gnulib.git;a=blob_plain;f=build-aux/gitlog-to-changelog
+  [1] https://git.savannah.gnu.org/gitweb/?p=gnulib.git;a=blob_plain;f=build-aux/gitlog-to-changelog
 
-To make this as easy as possible, setup.py does the following:
-  - create or refresh (overwriting) ChangeLog from the Git log if there is a
-    .git subdirectory in the current directory. This is very quick and done
-    every time setup.py is run. For this to work, gitlog-to-changelog must be
-    in the PATH and executable.
-  - use the existing ChangeLog file if there is no .git subdirectory (this is
-    for people building from a release tarball as opposed to a clone of the
-    Git repository);
-  - include the ChangeLog file in every source distribution made with
-    "setup.py sdist".
+In previous releases, setup.py contained code that automatically ran
+gitlog-to-changelog to generate a ChangeLog file from the Git repository, if
+it was run from a Git repository. However the current trend now is that Python
+build systems let developers provide metadata but not code, so
+CondConfigParser has no setup.py anymore. If you package it from a clone of
+its Git repository, you now have to run gitlog-to-changelog[1] yourself.
 
 
 Packaging from a clone of the Git repository
@@ -36,28 +32,23 @@ Packaging from a clone of the Git repository
 If you want to prepare a package from a clone of the Git repository, you
 should:
 
-  - make sure the 'version_info' variable in condconfigparser/version.py
+  - Make sure the __version__ variable in src/condconfigparser/__init__.py
     indicates a Git snapshot, with something like:
 
-      version_info = VersionInfo(0, 9, 0, ".git20150109")
+      __version__ = "1.0.5+git20150109"
 
-  - install gitlog-to-changelog (single-file Perl script, see above for the
-    download location) and make sure setup.py can find it. Unless you modify
-    setup.py, this means you have to make it executable and put it somewhere
-    in your PATH. You may have to replace the first lines of shell+Perl crap
-    with a proper shebang line (such as "#! /usr/bin/perl"). You can run
-    'gitlog-to-changelog --help' to check that it is working.
+    Réf.: https://packaging.python.org/en/latest/specifications/version-specifiers/#local-version-identifiers
 
-  - run 'setup.py sdist' to generate the ChangeLog and prepare a source
-    distribution. Alternatively, if you only want to generate the ChangeLog,
-    you can use a command such as the following, which writes its output in
-    the UTF-8 encoding:
+  - Install gitlog-to-changelog (single-file Perl script, see above for the
+    download location). You may have to replace the first lines of shell+Perl
+    crap with a proper shebang line (such as "#! /usr/bin/perl").
 
-      python3 -c \
-   'import setup; setup.generate_changelog("ChangeLog", write_to_stdout=True)' \
-   >/path/to/generated/ChangeLog
+  - cd ⟨repository root directory⟩
 
-    If you want to do some testing of the command by piping the output into
-    a pager such as less, don't forget to type Ctrl-L to refresh the initial
-    screen, because it may be garbled due to the messages sent to stderr
-    (alternatively, you can redirect stderr).
+  - Regenerate the 'ChangeLog' file:
+
+      gitlog-to-changelog --format=%s%n%n%b%n >ChangeLog
+
+  - Generate a Python source distribution of CondConfigParser:
+
+      python3 -m build

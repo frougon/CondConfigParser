@@ -11,7 +11,7 @@ the Python_ language for comments and expressions, but differs in the overall
 structure of a configuration file (variable assignments inside braces,
 predicates inside square brackets, etc.).
 
-.. _Python: http://www.python.org/
+.. _Python: https://www.python.org/
 
 .. _whitespace-and-comments-rules:
 

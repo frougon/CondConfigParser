@@ -61,8 +61,8 @@ Glossary
       on the longer phrase "raw configuration lines".
 
       .. _FGo!: https://sites.google.com/site/erobosprojects/flightgear/add-ons/fgo
-      .. _FFGo: http://frougon.net/projects/FFGo/
-      .. _FlightGear: http://www.flightgear.org/
+      .. _FFGo: https://frougon.net/projects/FFGo/
+      .. _FlightGear: https://www.flightgear.org/
 
       See :ref:`raw-configuration-line` for a description of how raw
       configuration lines are recognized and :token:`rawConfigLine` for use in

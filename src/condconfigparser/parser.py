@@ -638,7 +638,7 @@ class Parser:
 
     For more information, you may refer to:
 
-      http://dickgrune.com/Books/PTAPG_1st_Edition/
+      https://dickgrune.com/Books/PTAPG_1st_Edition/
 
     """
     def __init__(self, lexer):

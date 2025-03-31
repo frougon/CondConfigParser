@@ -49,9 +49,7 @@ Home page
 
 CondConfigParser's home page is located at:
 
-  http://frougon.net/projects/CondConfigParser/
-
-(it was on people.via.ecp.fr before April 30, 2016)
+  https://frougon.net/projects/CondConfigParser/
 
 
 Requirements
@@ -59,10 +57,8 @@ Requirements
 
 This version of CondConfigParser requires `Python`_ 3.4 or later.
 
-Installation from source also requires `setuptools`_, but this should only
-be a concern if you want to install without `pip`_ (if you have ``pip``,
-you should already have ``setuptools``; and if not, installing ``pip``
-is likely to cause ``setuptools`` to be installed at the same time).
+Installation can be performed with `pip`_ as is now standard for Python
+packages.
 
 .. _Python: https://www.python.org/
 .. _pip: https://pypi.org/project/pip/
@@ -74,27 +70,27 @@ Debian package
 If you are a Debian_ user, you can install CondConfigParser using the
 following lines in your ``/etc/apt/sources.list``::
 
-  deb http://frougon.net/debian-ffgo unstable main
-  deb-src http://frougon.net/debian-ffgo unstable main
+  deb https://frougon.net/debian-ffgo unstable main
+  deb-src https://frougon.net/debian-ffgo unstable main
 
 The package is named ``python3-condconfigparser``. A package for Debian
 *stable* is also available. If this is what you want, just replace
-*unstable* with *buster*, or whatever is the codename of the current
+*unstable* with *bookworm*, or whatever is the codename of the current
 Debian *stable* release, in the ``sources.list`` lines given above.
 
 The ``Release`` files in this repository are signed with `Florent
-Rougon's OpenPGP key`_ . After downloading this key, be sure to verify
+Rougon's OpenPGP key`_ . After downloading this key, you can verify
 that this is the same key as served `by Github
-<https://github.com/frougon.gpg>`_ over https (you'll need to add a
-trailing newline to the latter to ensure byte-for-byte equality). Once
-you've verified that this is the right key, you can add it to your
-``apt`` keyring using ``apt-key add /path/to/file``, as root. This
-allows ``apt`` to authenticate the packages. If you don't do this, the
-installation should still be possible but with warnings and, of course,
-reduced security.
+<https://github.com/frougon.gpg>`_ (you may need to add a
+trailing newline to the latter to ensure a byte-for-byte match).
+
+In order to tell ``apt`` to trust the key, you can save it for instance
+as ``/etc/apt/trusted.gpg.d/Florent_Rougon.asc``. This allows ``apt`` to
+authenticate the packages. If you don't do this, the installation should
+still be possible but with warnings and, of course, reduced security.
 
 .. _Debian: https://www.debian.org/
-.. _Florent Rougon's OpenPGP key: http://frougon.net/keys.html
+.. _Florent Rougon's OpenPGP key: https://frougon.net/keys.html
 
 
 Quick installation instructions
@@ -125,12 +121,11 @@ Download
 
 Typical installations with `pip`_ automatically download the latest
 release from `PyPI`_. However, in some cases, you may want to download a
-wheel package, tarball or zip file yourself in order to install it
-later, possibly on a different machine. You may get such files `from
+wheel package or a tarball yourself in order to install it later,
+possibly on a different machine. You may get such files `from
 PyPI <https://pypi.org/project/CondConfigParser/>`_ or `from Florent
 Rougon's home page
-<http://frougon.net/projects/CondConfigParser/dist/>`_ (the former
-should normally be favored over the latter, as it is served over https).
+<https://frougon.net/projects/CondConfigParser/dist/>`_.
 
 .. _PyPI: https://pypi.org/
 
@@ -152,13 +147,13 @@ the `Sphinx`_ documentation generator. The HTML documentation for the
 latest version of CondConfigParser as rendered by Sphinx is available
 at:
 
-  http://frougon.net/projects/CondConfigParser/doc/
+  https://frougon.net/projects/CondConfigParser/doc/
 
-.. _reStructuredText: http://docutils.sourceforge.net/rst.html
+.. _reStructuredText: https://docutils.sourceforge.io/rst.html
 .. _Python: https://www.python.org/
-.. _Sphinx: http://sphinx-doc.org/
-.. _LaTeX: http://latex-project.org/
-.. _Make: http://www.gnu.org/software/make/
+.. _Sphinx: https://www.sphinx-doc.org/
+.. _LaTeX: https://latex-project.org/
+.. _Make: https://www.gnu.org/software/make/
 
 The sources for the CondConfigParser Manual are located in the ``doc``
 top-level directory of the CondConfigParser distribution, but the
@@ -207,55 +202,29 @@ possible to build the documentation with two commands such as::
 These commands must be run from the ``doc`` directory. Please refer to
 `sphinx-build`_ for more details.
 
-.. _sphinx-build: http://sphinx-doc.org/invocation.html
+.. _sphinx-build: https://www.sphinx-doc.org/en/master/man/sphinx-build.html
 
 
 Running the automated test suite
 --------------------------------
 
-* If you want to run the automated test suite from an unpacked release
-  tarball (or `Git`_ checkout), go to the root directory of that
-  CondConfigParser distribution (the directory containing ``README.rst``
-  and the ``condconfigparser`` directory) and run::
+In order to run the automated test suite, first install CondConfigParser
+then run::
 
-    python3 -m unittest
+  python3 -m unittest discover -s tests
 
-  (assuming of course that you want to run the tests with an executable
-  called ``python3``).
+(assuming of course that you want to run the tests with an executable
+called ``python3``).
 
-  You may want to add the ``-v`` option at the end of the command in
-  order to run the test suite in verbose mode.
-
-* On the other hand, if you have already installed CondConfigParser for
-  a given Python installation and you want to test the installed
-  package, go to the directory containing the installed package and
-  run::
-
-    python3 -m unittest discover -t ..
-
-  With a POSIX-style shell, you can combine both operations with the
-  following command (that does not change your current directory)::
-
-    ( cd base_dir/lib/python3.4/site-packages/condconfigparser && \
-      python3 -m unittest discover -t .. )
-
-  This command is given for a Python 3.4 installation:
-
-    - rooted at ``base_dir`` (typically ``/usr``, ``/usr/local``,
-      ``/opt/pythonX.Y`` [on Unix-like systems] or a directory
-      containing a Python `venv`_ or `virtualenv`_)
-
-    - using the ``python3`` executable.
-
-  You may want to add the ``-v`` option after the ``discover`` argument
-  in order to run the test suite in verbose mode.
+You may want to add the ``-v`` option at the end of the command in
+order to run the test suite in verbose mode.
 
 A successful run of the test suite looks like this::
 
-  % python3 -m unittest
-  .......
+  % python3 -m unittest discover -s tests
+  ........
   ----------------------------------------------------------------------
-  Ran 7 tests in 0.052s
+  Ran 8 tests in 0.004s
 
   OK
   % echo $?
@@ -266,17 +235,7 @@ In the above output, each dot represents a successful test. The
 ``echo $?`` command shows the zero exit status, indicating success for
 all tests. In case of a failure, the exit status is non-zero.
 
-It is also possible to ask `setuptools`_ to run the test suite (by
-default in verbose mode, cf. `the corresponding documentation
-<https://setuptools.pypa.io/en/latest/setuptools.html#test-build-package-and-run-a-unittest-suite>`_).
-For instance::
-
-  python3 setup.py test
-
-.. _Git: http://git-scm.com/
-.. _venv: https://docs.python.org/3/library/venv.html
-.. _virtualenv: https://virtualenv.pypa.io/
-.. _setuptools: https://setuptools.pypa.io/
+.. _Git: https://git-scm.com/
 
 .. 
   # Local Variables:
