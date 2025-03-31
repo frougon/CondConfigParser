@@ -51,8 +51,8 @@ from .parser import Parser
 class DummyContextManager:
     """Do-nothing context manager.
 
-    When used in a :python:keyword:`with` statement, instances of this
-    class simply return the object that was passed to the constructor.
+    When used in a :keyword:`with` statement, instances of this class
+    simply return the object that was passed to the constructor.
 
     """
     def __init__(self, stream):

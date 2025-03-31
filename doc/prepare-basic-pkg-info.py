@@ -32,9 +32,9 @@
 # those of the authors and should not be interpreted as representing official
 # policies, either expressed or implied, of the CondConfigParser Project.
 
-import sys
-import re
 import locale
+import re
+import sys
 
 
 def main():
@@ -50,7 +50,7 @@ def main():
     # context to be reasonably sure we don't replace something else than the
     # expected text.
     rest = re.sub(r"^Note:\n\n( +The ``Makefile`` uses a Python script)",
-                  r".. note::\n\n\1", mo.group(1), 1, re.MULTILINE)
+                  r".. note::\n\n\1", mo.group(1), count=1, flags=re.MULTILINE)
 
     with open(sys.argv[2], "w", encoding="utf-8") as ofile:
         ofile.write(rest)

@@ -128,7 +128,7 @@ defined."""
 
 class InTestTypeError(error):
     """Exception raised when an :token:`inTest` can't be \
-:meth:`~condconfigparser.parser.InTestNode.eval`\ed because of a type \
+:meth:`~condconfigparser.parser.InTestNode.eval`'ed because of a type \
 mismatch."""
     def __init__(self, inToken, origExc):
         self.inToken = inToken
