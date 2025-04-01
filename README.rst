@@ -211,7 +211,7 @@ Running the automated test suite
 In order to run the automated test suite, first install CondConfigParser
 then run::
 
-  python3 -m unittest discover -s tests
+  python3 -m unittest discover
 
 (assuming of course that you want to run the tests with an executable
 called ``python3``).
@@ -221,7 +221,7 @@ order to run the test suite in verbose mode.
 
 A successful run of the test suite looks like this::
 
-  % python3 -m unittest discover -s tests
+  % python3 -m unittest discover
   ........
   ----------------------------------------------------------------------
   Ran 8 tests in 0.004s

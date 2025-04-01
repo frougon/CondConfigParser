@@ -53,7 +53,7 @@ class TestLexerPlusParser(unittest.TestCase):
     def testComplexExprAroundBinOp(self):
         """Parse expressions of the form ( orTest ) == ( orTest ) and \
 analogue with !="""
-        from data.config2 import refTree
+        from tests.data.config2 import refTree
         tree = loadTreeFromCfgFile("config2")
         self.assertEqual(tree, refTree)
 
@@ -61,13 +61,13 @@ analogue with !="""
         """Parse constructs with continuation lines
 
         (right, continuation lines are handled at lexer level)"""
-        from data.config3 import refTree
+        from tests.data.config3 import refTree
         tree = loadTreeFromCfgFile("config3")
         self.assertEqual(tree, refTree)
 
     def testLexerPlusParser(self):
         """Parse a complex configuration file"""
-        from data.config1 import refTree
+        from tests.data.config1 import refTree
         tree = loadTreeFromCfgFile("config1")
         self.assertEqual(tree, refTree)
 

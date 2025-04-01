@@ -62,7 +62,7 @@ class TestRawConditionalConfigEval(unittest.TestCase):
 
     def testEvalOnComplexCfgFile(self):
         """Process a complex configuration file with RawConditionalConfig.eval()"""
-        from data.config1 import variables, rawConfigLines
+        from tests.data.config1 import variables, rawConfigLines
         config = loadCfgFile("config1", self.sampleContext)
 
         self.assertEqual(config.eval(self.sampleContext),
@@ -76,7 +76,7 @@ RawConditionalConfig.eval()
         and analogue with !=.
 
         """
-        from data.config1 import variables, rawConfigLines
+        from tests.data.config1 import variables, rawConfigLines
         config = loadCfgFile("config1", self.sampleContext)
 
         self.assertEqual(config.eval(self.sampleContext),
