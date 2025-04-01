@@ -2,7 +2,7 @@
 
 # __init__.py --- Initialization of the condconfigparser package.
 #
-# Copyright (c) 2014, Florent Rougon
+# Copyright (c) 2014-2025, Florent Rougon
 # All rights reserved.
 #
 # Redistribution and use in source and binary forms, with or without
@@ -35,7 +35,7 @@ expressions to define conditional sections.
 
 """
 
-__version__ = "1.0.5"
+__version__ = "1.0.6"
 
 from .exceptions import error, \
                         ParseError, \
